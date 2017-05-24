@@ -14,17 +14,15 @@ public class QuickSort {
     }
     
     static int partition(List<String> names, int left, int right) {
-        int pivot = right;
-        int small = -1;
+        int small = left - 1;
+        String pivot = names.get(right);
         String temp;
         
-        for (int i = 0; i <= right; ++i) {
-            if (names.get(i).compareToIgnoreCase(names.get(pivot)) <= 0) {
-                if (++small != i) {         // so you don't have to use 3 lines to "swap" with yourself
-                    temp = names.get(small);
-                    names.set(small, names.get(i));
-                    names.set(i, temp);
-                }
+        for (int i = left; i <= right; ++i) {
+            if (names.get(i).compareToIgnoreCase(pivot) <= 0 && ++small != i) {
+                temp = names.get(small);
+                names.set(small, names.get(i));
+                names.set(i, temp);
             }
         }
         return small;

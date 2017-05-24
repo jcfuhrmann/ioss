@@ -19,20 +19,20 @@ public class ReadFile {
             }
         }
         
-        // sort it
-        QuickSort.quickSort(programData, 0, programData.size() - 1);
-        // display sorted file
-        System.out.println("\n\n");
-        System.out.println("Sorted file");
-        for (int i = 0; i < programData.size(); ++i) {
-            System.out.println(programData.get(i));
-        }
-        
         // shuffle it
         QuickSort.shuffle(programData);
         // display shuffled file
         System.out.println("\n\n");
         System.out.println("Shuffled file");
+        for (int i = 0; i < programData.size(); ++i) {
+            System.out.println(programData.get(i));
+        }
+        
+        // sort it
+        QuickSort.quickSort(programData, 0, programData.size() - 1);
+        // display sorted file
+        System.out.println("\n\n");
+        System.out.println("Sorted file");
         for (int i = 0; i < programData.size(); ++i) {
             System.out.println(programData.get(i));
         }
